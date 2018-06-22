@@ -1,15 +1,16 @@
 
-def read_file (file_name)
+def read_file(file_name)
+  file = File.open(file_name, 'r')
+  lines = file.readlines
+  file.close
+  grades = lines.map { |e| e.chomp.split(', ') }
+  grades
+  # print grades
 end
-file_name = 'curso.csv'
-file = File.open(file_name, 'r')
-lines = file.readlines
-file.close
-grades = lines.map { |e| e.chomp.split(', ') }
-# print grades
+
 
 # ------METHOD THAT GENERATES AVERAGE FILE------
-# NOTA: ONLY ACCEPTS 5 GRADES PER STUDENT
+
 def generate_file_average(grades)
   file_name = 'promedios.csv'
   file = File.open(file_name, 'w')
@@ -88,7 +89,10 @@ end
 
 
 #------------MENÚ DE OPCIONES------------
+
+grades = read_file('curso.csv')
 option = 0
+
 puts ''
 puts 'Ingresa un número entero del 1 al 4 según las siguientes opciones:'
 puts ''
