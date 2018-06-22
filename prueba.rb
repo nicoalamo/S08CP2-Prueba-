@@ -1,4 +1,6 @@
 
+def read_file (file_name)
+end
 file_name = 'curso.csv'
 file = File.open(file_name, 'r')
 lines = file.readlines
@@ -106,7 +108,38 @@ while option != 6
        when '2'
          count_absent(grades)
        when '3'
-         show_aproved(grades, 5.0)
+         puts ''
+         puts 'Ingresa 1, 2 o 3 según las siguientes opciones:'
+         puts '1: Para usar la nota 5.0 como nota de aprobación'
+         puts '2: Para ingresar la nota de aprobación tú'
+         puts '3: Para volver al menú anterior'
+
+         option2 = gets.chomp
+
+         puts case option2
+              when '1'
+                show_aproved(grades, 5.0)
+              when '2'
+                puts 'Ingresa la nota mínima para aprobar o 0 para volver al menú anterior'
+                min_grade = gets.chomp.to_f
+                while !(min_grade >= 0 && min_grade <= 10.0) do
+                  puts ''
+                  puts 'Ingresa correctamente un número entero entre 1 y 3 por favor:'
+                  min_grade = gets.chomp.to_f
+                end
+
+                if min_grade == 0
+
+                else
+                  show_aproved(grades, min_grade)
+                end
+              when '3'
+
+              else
+                puts ''
+                puts 'Ingresa correctamente un número entero entre 1 y 3 por favor:'
+              end
+
        when '4'
          break
        else
