@@ -97,7 +97,7 @@ puts ''
 puts 'Ingresa un número entero del 1 al 4 según las siguientes opciones:'
 puts ''
 
-while option != 6
+ while option != 4
 
   puts 'Opción 1: Para generar un archivo con el nombre de cada alumno y el promedio de sus notas.'
   puts 'Opción 2: Para contar la cantidad de inasistencias totales y mostrarlas pantalla.'
@@ -151,4 +151,4 @@ while option != 6
          puts 'Ingresa correctamente un número entero entre 1 y 4 por favor:'
        end
 
-end
+ end
